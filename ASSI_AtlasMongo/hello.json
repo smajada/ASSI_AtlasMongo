@@ -1,0 +1,13 @@
+curl -X POST \
+  https://data.mongodb-api.com/app/data-abcde/endpoint/data/v1/action/updateOne \
+  -H 'api-key: "V1gBL7iLURWvrNu1nUM8unZFhX90uRkolBoi7d0TlnvgzOE9Kspgq3YC9XToW2oP" \
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+     "dataSource": "mongodb-atlas",
+     "database": "learn-data-api",
+     "collection": "hello",
+     "filter": { "greeting": "Hello, world!" },
+     "update": {
+         "$set": { "greeting": "Hello, universe!" }
+     }
+  }'
