@@ -26,6 +26,8 @@ headers = {
     "Access-Control-Request-Headers": "*",
     "api-key": "V1gBL7iLURWvrNu1nUM8unZFhX90uRkolBoi7d0TlnvgzOE9Kspgq3YC9XToW2oP",
     "Accept": "application/ejson",
+
+    "hello": hey yo
 }
 response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
