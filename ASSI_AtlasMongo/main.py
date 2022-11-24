@@ -1,14 +1,24 @@
 import requests
 import json
 
-url = "https://data.mongodb-api.com/app/data-zhpbu/endpoint/data/v1/action/findOne"
+url = "https://data.mongodb-api.com/app/data-zhpbu/endpoint/data/v1/action/aggregate"
 
 payload = json.dumps(
     {
         "collection": "Product",
         "database": "DataBike",
         "dataSource": "sandbox",
-        "projection": {},
+        "pipeline" : [
+    {
+        '$group': {
+            '_id': '$bikeType', 
+            'count': {
+                '$sum': 1
+            }
+        }
+    }
+]
+
     }
 )
 headers = {
